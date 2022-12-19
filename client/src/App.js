@@ -2,11 +2,13 @@ import React, {useState, useEffect} from "react";
 import './App.css';
 import Axios from "axios";
 import Card from "./components/cards/card";
+import FormDialog from "./components/dialog/dialog";
 
 function App() {
 
   const [values, setValues] = useState();
-  //  console.log(values);
+  const [listBooks, setListBooks] = useState();
+  console.log(listBooks);
 
   const mudancaValores = (value) =>{
     setValues(prevValue =>({
@@ -14,6 +16,7 @@ function App() {
       [value.target.name]: value.target.value
     }));
   }
+
   const handleClickButton = () =>{
     Axios.post("http://localhost:3001/api/books/",
     {
@@ -37,6 +40,12 @@ function App() {
     });
   };
 
+  useEffect(()=>{
+    Axios.get("http://localhost:3001/api/books/").then((response)=>{
+      setListBooks(response.data);
+    });
+  }, []);
+
 
   return (
     <div className="app-container">
@@ -58,7 +67,20 @@ function App() {
       <button className="button" onClick={() => handleClickButton()}>Cadastrar Livro</button>
 
      </div>
-     <Card></Card>
+     {typeof listBooks !== 'undefined' && listBooks.map((value)=>{
+      return <Card 
+      key={value.idlivro}
+      listCard={listBooks} 
+      setListCard={setListBooks}
+      idlivro={value.idlivro}
+      isbnlivro={value.isbnlivro}
+      titulolivro={value.titulolivro}
+      autor={value.autor}
+      editoralivro={value.editoralivro}
+      anolivro={value.anolivro}
+      qtdelivrodisponivel={value.qtdelivrodisponivel}>
+      </Card>
+     })}
     </div>
   );
 }

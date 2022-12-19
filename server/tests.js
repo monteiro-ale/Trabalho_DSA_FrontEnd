@@ -11,7 +11,7 @@ const emprestimoDeLivro = require('./service/lending_service.js');
 
 //Insert Author
 
-cadastroautor.registerAuthor({nomeautor: "Arthur Schopenhauer", nacionalidade:'Alemão'}, function(err, autorInserido) {
+cadastroautor.registerAuthor({nomeautor: "Marco Aurelio", nacionalidade:'Grego'}, function(err, autorInserido) {
         console.log("")
             if(err) {
             console.log("Sistema esta com problemas");
@@ -53,16 +53,16 @@ cadastroautor.registerAuthor({nomeautor: "Arthur Schopenhauer", nacionalidade:'A
 
 //Insert Book
 
-cadastroLivro.insertBook({isbnlivro: '97878236432',titulolivro: 'As Dores do Mundo', idautor: 4, editoralivro: 'Edipro', anolivro: '1850-04-07', qtdelivrodisponivel: 1}, function(err, livroInserido){
-    console.log("Livro Inserido: ")
-    if(err){
-        console.log("Erro ao cadastrar livro");
-        console.log(err)
-    }
-    else {
-        console.log(livroInserido)
-    }
-})
+// cadastroLivro.insertBook({isbnlivro: '97878236432',titulolivro: 'As Dores do Mundo', idautor: 4, editoralivro: 'Edipro', anolivro: '1850-04-07', qtdelivrodisponivel: 1}, function(err, livroInserido){
+//     console.log("Livro Inserido: ")
+//     if(err){
+//         console.log("Erro ao cadastrar livro");
+//         console.log(err)
+//     }
+//     else {
+//         console.log(livroInserido)
+//     }
+// })
 
 
 
