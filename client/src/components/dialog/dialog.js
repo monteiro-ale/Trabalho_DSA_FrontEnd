@@ -32,6 +32,8 @@ const [editValues, setEditValues] = React.useState({
         anolivro: editValues.anolivro, 
         qtdelivrodisponivel: editValues.qtdelivrodisponivel
         })
+        handleClose();
+        document.location.reload();
     };
 
   const handleClickOpen = () => {
@@ -48,6 +50,14 @@ const [editValues, setEditValues] = React.useState({
         [values.target.id] : values.target.value
     }));
   }
+
+  const handleDeleteBook = () =>{
+    Axios.delete(`http://localhost:3001/api/books/${editValues.id}`);
+    handleClose();
+    document.location.reload();
+  };
+
+
   return (
     <div>
      
@@ -124,7 +134,7 @@ const [editValues, setEditValues] = React.useState({
         <DialogActions>
           <Button onClick={handleClose}>Cancelar</Button>
           <Button onClick={handleEditBook}>Salvar</Button>
-          <Button onClick={handleClose}>Excluir</Button>
+          <Button onClick={handleDeleteBook}>Excluir</Button>
         </DialogActions>
       </Dialog>
     </div>

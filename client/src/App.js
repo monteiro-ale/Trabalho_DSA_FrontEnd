@@ -38,6 +38,7 @@ function App() {
     .catch((error) => {
       console.log(error.message);
     });
+    document.location.reload();
   };
 
   useEffect(()=>{
@@ -76,6 +77,7 @@ function App() {
       isbnlivro={value.isbnlivro}
       titulolivro={value.titulolivro}
       autor={value.autor}
+      idautor={value.idautor}
       editoralivro={value.editoralivro}
       anolivro={value.anolivro}
       qtdelivrodisponivel={value.qtdelivrodisponivel}>

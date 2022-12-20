@@ -20,7 +20,7 @@ function listBook(callback) {
     const cliente = new Client(conexao);
     cliente.connect();
     
-    const sql = "SELECT livros.idlivro, livros.isbnlivro, livros.titulolivro, autor.nomeautor as autor,livros.editoralivro, livros.anolivro, qtdelivrodisponivel FROM livros, autor WHERE livros.idautor = autor.idautor ORDER BY idlivro;";
+    const sql = "SELECT livros.idlivro, livros.isbnlivro, livros.titulolivro, autor.nomeautor as autor, livros.idautor, livros.editoralivro, livros.anolivro, qtdelivrodisponivel FROM livros, autor WHERE livros.idautor = autor.idautor ORDER BY idlivro;";
     cliente.query(sql, 
         function (err, res) {
             if(err) {

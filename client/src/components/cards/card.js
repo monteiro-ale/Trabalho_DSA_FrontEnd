@@ -37,6 +37,7 @@ export default function Card(props){
         <p className="book-id">Id: {props.idlivro}</p>
         <p className="isbn"> ISBN: {props.isbnlivro}</p>
         <p className="autor">Autor: {props.autor}</p>
+        <p className="idautor">Id Autor: {props.idautor}</p>
         <p className="data-lancamento">Data Lançamento: {props.anolivro}</p>
         <p className="qtde-disponivel">Quantidade Disponível: {props.qtdelivrodisponivel}</p>
         <p className="editora-livro">Editora: {props.editoralivro}</p>
