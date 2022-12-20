@@ -30,7 +30,8 @@ export default function Card(props){
     anolivro={props.anolivro} 
     qtdelivrodisponivel={props.qtdelivrodisponivel}
     listCard={props.listCard}
-    setListCard={props.setListCard} />
+    setListCard={props.setListCard}
+    idlivro={props.idlivro} />
         <div className="card-container" onClick={() => handleClickCard()}>
         <h1 className="book-title">{props.titulolivro}</h1>
         <p className="book-id">Id: {props.idlivro}</p>
