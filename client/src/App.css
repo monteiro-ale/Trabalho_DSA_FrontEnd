@@ -1,18 +1,32 @@
 .app-container{
+  background-color: rgb(21, 85, 122);
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction:column;
 }
 
 .register-container{
-  padding: 10px 20px;
-  border: 1px solid black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px 60px;
+  /*border: 1px solid black;*/
   border-radius: 5px;
   margin-top: 20px;
+  background-color:blanchedalmond
 }
 
 .cadastrolivros{
   display: block;
   padding: 10px 0;
   margin: 10px auto;
+}
+
+.livros-container{
+  display:inline-block;
+  align-items: center;
+  padding: 10px 0;
+  margin: 10px auto;
+}
+
+.body-ct{
+  background-color: #15557a;
 }

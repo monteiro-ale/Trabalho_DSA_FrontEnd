@@ -68,6 +68,7 @@ function App() {
       <button className="button" onClick={() => handleClickButton()}>Cadastrar Livro</button>
 
      </div>
+     <div className="livros-container">
      {typeof listBooks !== 'undefined' && listBooks.map((value)=>{
       return <Card 
       key={value.idlivro}
@@ -83,6 +84,7 @@ function App() {
       qtdelivrodisponivel={value.qtdelivrodisponivel}>
       </Card>
      })}
+     </div>
     </div>
   );
 }
